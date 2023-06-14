@@ -2,7 +2,7 @@
 const text = "Hello";
 const key = "abcdef"
 console.log(`Plain Text:`, text)
-console.log(`Cipher Text:`, text)
+console.log(`Key:`, key)
 
 if (textToBinary(text).length > 64) throw Error('Text is too long')
 const [binaryText, paddedZeros] = padBinary0s(textToBinary(text), 64, true)
@@ -152,11 +152,6 @@ function generateKeys(key) {
     }
     return keys
 }
-
-
-
-
-
 
 function bitwiseXOR(binary1, binary2) {
     if (binary1.length != binary2.length) throw Error('Length mismatch')
